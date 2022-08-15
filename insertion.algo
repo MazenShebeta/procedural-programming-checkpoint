@@ -1,0 +1,26 @@
+
+ALGORITHM insertion
+VAR
+    arr : ARRAY_OF INTEGER[12];
+    arr:= [3, 6, 2, 12 , 5, 8, 9, 1, 4, 7, 10, 11];
+
+    FUNCTION insertion_sort(arr) : ARRAY_OF INTEGER
+    VAR
+        key: INTEGER;
+        j: INTEGER;
+    BEGIN
+        FOR i FROM 0 TO arr.length-1 STEP step  DO{
+            j := i - 1;
+            WHILE (j>= 0 && arr[j] > key) DO
+                    arr[j + 1] = arr[j];
+                j--;
+            END_WHILE
+            arr[j + 1] = key;
+        }
+        END_FOR
+        RETURN arr;
+    END
+
+BEGIN
+    PRINT("sorted array: " + insertion_sort(arr));
+END
